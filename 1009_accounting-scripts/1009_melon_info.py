@@ -1,18 +1,15 @@
 """Print out all the melons in our inventory."""
 
+# ideally this actually pulls from database
+from melons import melon_data
 
-from melons import melon_names, melon_seedlessness, melon_prices
-
-
-def print_melon(name, seedless, price):
-    """Print each melon."""
-
-    have_or_have_not = 'have'
-    if seedless:
-        have_or_have_not = 'do not have'
-
-    print "{}s {} seeds and are ${:.2f}".format(name, have_or_have_not, price)
+#print sorted(melon_data.items()) #for melon in melon_data
+for melon in sorted(melon_data):
+    print "\n{}:".format(melon.upper())
+    for attribute, value in sorted(melon_data[melon].items()):
+        print "    {}: {}".format(attribute, value)
 
 
-for i in melon_names:
-    print_melon(melon_names[i], melon_seedlessness[i], melon_prices[i])
+"""
+
+"""
