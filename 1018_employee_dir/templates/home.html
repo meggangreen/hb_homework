@@ -15,7 +15,7 @@
 
                       <!--    search form    -->
 
-          <form action="/search">
+          <form action="/employee_search">
             <label>Search
               <input type="text" name="employee_name" placeholder="first name">
             </label>
@@ -29,7 +29,7 @@
         {% if messages %}
         {% for message in messages %}
         <ul class="flashes">
-          <li>{{message}}</li>
+          <li>{{ message }}</li>
         </ul>
         {% endfor %}
         {% endif %}
